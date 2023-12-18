@@ -18,16 +18,12 @@ function destructivelyUpdateEmployeeWithKeyAndValue(employee, key, value) {
 }
 
 function deleteFromEmployeeByKey(employee, key) {
-  const newEmployee = { ...employee };
-  const newWorker = delete newEmployee.key;
-  return newWorker;
+  const newEmployee = Object.assign({}, employee);
+  delete newEmployee[key];
+  return newEmployee;
 }
 
-/*
 function destructivelyDeleteFromEmployeeByKey(employee, key) {
   delete employee[key];
-}
-*/
-function destructivelyDeleteFromEmployeeByKey(employee, key) {
-  delete employee[key];
+  return employee;
 }
